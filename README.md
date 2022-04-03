@@ -7,7 +7,8 @@ Create a GAN (Generative Adversarial Network)</br>
 Create artificial pictures of cats!</br>
 “Simple enough” I told myself... Lets dive in.</br>
 3 hours later:</br></br>
-
+![image](https://user-images.githubusercontent.com/62908910/161447612-a5273315-07f3-4bf1-8fd6-ea9864e06842.png)
+</br></br>
 Chaos</br></br>
 The steps evolved into the following:</br>
 Scrape Reddit using pre-existing free tools. I used Parsehub.</br>
@@ -16,6 +17,11 @@ Upload scraped photos into a kaggle dataset. Connect dataset to kaggle notebook<
 Locate a pre-existing Kaggle notebook of a GAN and *fingers crossed* wrangle said notebook to fit my data and generate images.</br>
 So, I did the following:</br></br>
 STEPS 1 and 2:</br></br>
+![image](https://user-images.githubusercontent.com/62908910/161447620-5cb5624a-42e2-40d7-960e-fc0098c0a9d7.png)
+![image](https://user-images.githubusercontent.com/62908910/161447624-d8f2b9ff-6863-4f86-a962-0a15260e1923.png)
+![image](https://user-images.githubusercontent.com/62908910/161447629-36771971-ce68-4993-8ee1-024b9f6a1550.png)
+
+
 
 First I used Parsehub and their wonderful tutorial video to scrape images.</br>
 Parsehub’s tutorial: https://www.youtube.com/watch?v=va_sLksriOw</br>
@@ -27,6 +33,9 @@ Download images to my local download folder using “Tab Save” extension</br>
 Viola. My Downloads folder is filled with cats!</br>
 STEP 3: Create a new dataset on Kaggle with all the photos I downloaded
 </br>
+![image](https://user-images.githubusercontent.com/62908910/161447651-124e5756-fed1-4245-a3b8-b44a4484e7e9.png)
+</br></br>
+
 STEP 4:</br>
 Huge shoutout to https://www.kaggle.com/ryo1993</br>
 Sir, your kaggle notebook was hard to work with. I could not read Japanese, but the code was in English and it made sense to me.</br>
@@ -34,8 +43,12 @@ His GAN notebook: https://www.kaggle.com/code/ryo1993/cat-gan</br>
 Kaggle fortunately had a cat repository with pre-cut images to perfection which made the GAN spit out better pictures. What came out of my notebook’s GAN was atrocious.</br>
 
 So far so good</br>
+![image](https://user-images.githubusercontent.com/62908910/161447665-9e308c20-fcb2-4830-907c-71c3d99ab4aa.png)
+
 
 Uh oh. These are the generated images. Those…are NOT cats :(</br></br>
+![image](https://user-images.githubusercontent.com/62908910/161447669-c36e79fb-f88a-4e2b-b98e-5a104a802c00.png)
+
 There is an explanation for this.</br></br>
 First off, the GAN created by the original guy used different versions of Pytorch which did not run properly. I had to rely on the notebook’s output and pray that it worked. I created a fresh notebook and made sure Pytorch and Numpy were installed (the kernels usually come with them pre-installed, but I wasn’t taking chances).
 The original kernel code used input paths and specialized functions to manipulate a list of paths based on the previous cat dataset. Here, I had to remove that code, and create my own list which pointed to my dataset.</br></br>
